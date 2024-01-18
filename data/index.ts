@@ -3,7 +3,8 @@ import { GAMES_URL } from "@/urls";
 const GAMES_PER_PAGE = 9;
 export const fetchFilteredGames = async (
   query: string,
-  currentPage: number
+  currentPage: number,
+  filter: string
 ) => {
   const offset = (currentPage - 1) * GAMES_PER_PAGE;
 
@@ -17,9 +18,10 @@ export const fetchFilteredGames = async (
       "Content-Type": "application/json",
     },
     body: `
-    fields name, id, first_release_date, summary,slug, screenshots.*, cover.*, rating; 
+    fields name, id, first_release_date,storyline, summary,slug, screenshots.*, cover.*, rating; 
     limit ${GAMES_PER_PAGE}; 
-    where name ~ *"${query}"* & rating_count > 100;
+    sort ${filter} desc;
+    where (name ~ *"${query}"* & rating_count > 20);
     offset ${offset};
     `,
   });
@@ -27,7 +29,7 @@ export const fetchFilteredGames = async (
   return games.json();
 };
 
-export const fetchGamesPages = async (query: string) => {
+export const fetchGamesPages = async (query: string, filter?: string) => {
   const games = await fetch(GAMES_URL, {
     method: "POST",
     cache: "no-store",

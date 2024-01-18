@@ -26,11 +26,9 @@ export default function GameCard({ game }: { game: any }) {
         height={150}
       />
       <div className="flex flex-col justify-between">
-        <h2 className="font-bold text-zinc-100">{game.name}</h2>
-        <p className="text-sm text-zinc-400">
-          {game?.summary.length > 80
-            ? game?.summary.slice(0, 80) + "..."
-            : game?.summary}
+        <h2 className="font-bold text-zinc-100 truncate hover:text-clip">{game.name}</h2>
+        <p className="text-sm text-zinc-400 line-clamp-5 text-pretty ">
+          {game?.summary}
         </p>
         <p className="text-sm text-gray-500 self-end">
           {formatDate(game?.first_release_date)}

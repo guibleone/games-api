@@ -5,11 +5,13 @@ import GameCard from "./game-card";
 export default async function Games({
   query,
   currentPage,
+  filter,
 }: {
   query: string;
   currentPage: number;
+  filter: string;
 }) {
-  const games = await fetchFilteredGames(query, currentPage);
+  const games = await fetchFilteredGames(query, currentPage, filter);
 
   return (
     <>
