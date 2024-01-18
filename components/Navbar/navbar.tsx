@@ -16,7 +16,7 @@ const links = [
 export default function Navbar() {
   return (
     <nav className="bg-zinc-950">
-      <div className="mx-auto max-w-screen-xl px-8 py-1.5 flex items-center justify-between">
+      <div className="mx-auto max-w-screen-xl px-8 py-3 flex items-center justify-between">
         <h1 className="font-bold text-2xl text-gray-200">
           <Link href="/">GamesXD</Link>
         </h1>

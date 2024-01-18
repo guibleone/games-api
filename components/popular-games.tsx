@@ -1,9 +1,8 @@
-import { fetchGamesPages } from "@/data";
+import { fetchFilteredGames, fetchGamesPages } from "@/data";
 import React, { Suspense } from "react";
 import Pagination from "./pagination";
 import Games from "./games";
 import Search from "./search-input";
-import GamesSkeleton from "./skeletons/games-skeleton";
 import SelectGames from "./select-games";
 
 export default async function PopularGames({
@@ -15,7 +14,8 @@ export default async function PopularGames({
   currentPage: number;
   filter: string;
 }) {
-  const totalPages = await fetchGamesPages(query,filter);
+  const totalPages = await fetchGamesPages(query, filter);
+  const games = await fetchFilteredGames(query, currentPage, filter);
 
   return (
     <div className="flex flex-col gap-10 ">
@@ -23,11 +23,7 @@ export default async function PopularGames({
         <SelectGames />
         <Search placeholder="Search games..." />
       </div>
-      <div className="grid grid-cols-1 sm:grid-cols-3 gap-10">
-        <Suspense fallback={<p>Loading...</p>}>
-          <Games query={query} currentPage={currentPage} filter={filter} />
-        </Suspense>
-      </div>
+      <Games games={games} />
       <Pagination totalPages={totalPages!} />
     </div>
   );

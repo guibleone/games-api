@@ -2,6 +2,7 @@
 import Image from "next/image";
 import React, { useState } from "react";
 import { Button } from "./ui/button";
+import Screenshots from "./screenshots";
 
 export default function SingleCard({ game }: { game: any }) {
   const [readMore, setReadMore] = useState(false);
@@ -41,27 +42,12 @@ export default function SingleCard({ game }: { game: any }) {
               </Button>
             </div>
           ) : (
-            <>
-            {game?.summary}
-            </>
+            <>{game?.summary}</>
           )}
         </p>
 
-        <div className="flex flex-wrap -mx-3 mt-4">
-          {game?.screenshots.map((screenShot: any) => (
-            <div
-              key={screenShot.id}
-              className="w-full sm:w-1/2 lg:w-1/3 px-3 mb-4"
-            >
-              <Image
-                src={`http://images.igdb.com/igdb/image/upload/t_1080p/${screenShot.image_id}.jpg`}
-                alt={game.name}
-                width={600}
-                height={150}
-                className="aspect-video object-cover"
-              />
-            </div>
-          ))}
+        <div className="flex justify-center">
+          <Screenshots screenshots={game?.screenshots} />
         </div>
       </div>
     </section>
