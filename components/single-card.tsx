@@ -41,7 +41,9 @@ export default function SingleCard({ game }: { game: any }) {
               </Button>
             </div>
           ) : (
-            <></>
+            <>
+            {game?.summary}
+            </>
           )}
         </p>
 
