@@ -18,7 +18,7 @@ export default function GameCard({ game }: { game: any }) {
       <Image
         src={
           game?.cover?.url
-            ? `http:/images.igdb.com/igdb/image/upload/t_1080p/${game?.cover?.image_id}.jpg`
+            ? `http://images.igdb.com/igdb/image/upload/t_1080p/${game?.cover?.image_id}.jpg`
             : "/no-image.jpg"
         }
         alt={game.name}
@@ -33,7 +33,7 @@ export default function GameCard({ game }: { game: any }) {
             : game?.summary}
         </p>
         <p className="text-sm text-gray-500 self-end">
-          {formatDate(game?.created_at)}
+          {formatDate(game?.first_release_date)}
         </p>
       </div>
     </div>

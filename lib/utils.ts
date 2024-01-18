@@ -5,12 +5,24 @@ export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs))
 }
 
-export function formatDate(date: Date) {
-  return new Intl.DateTimeFormat('pt-BR', {
-    day: 'numeric',
-    month: 'numeric',
-    year: 'numeric'
+export function formatDate(unixTimestamp: number) {
+  const milliseconds = unixTimestamp * 1000;
+
+  // Create a Date object with the given timestamp
+  const date = new Date(milliseconds);
+
+  // Specify the time zone for Brazil (America/Sao_Paulo)
+  const timeZone = "America/Sao_Paulo";
+  
+  // Format the date and time using Intl.DateTimeFormat
+  const formattedDateTime = new Intl.DateTimeFormat("pt-BR", {
+    timeZone,
+    year: "numeric",
+    month: "numeric",
+    day: "numeric",
   }).format(date);
+
+  return formattedDateTime;
 
 }
 

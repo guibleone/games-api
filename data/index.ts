@@ -17,7 +17,7 @@ export const fetchFilteredGames = async (
       "Content-Type": "application/json",
     },
     body: `
-    fields name, id, created_at, summary,slug, screenshots.*, cover.*, rating; 
+    fields name, id, first_release_date, summary,slug, screenshots.*, cover.*, rating; 
     limit ${GAMES_PER_PAGE}; 
     where name ~ *"${query}"* & rating_count > 100;
     offset ${offset};
