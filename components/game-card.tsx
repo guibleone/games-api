@@ -26,8 +26,8 @@ export default function GameCard({ game }: { game: any }) {
         height={150}
       />
       <div className="flex flex-col justify-between">
-        <h2 className="font-bold">{game.name}</h2>
-        <p className="text-sm text-gray-500">
+        <h2 className="font-bold text-zinc-100">{game.name}</h2>
+        <p className="text-sm text-zinc-400">
           {game?.summary.length > 80
             ? game?.summary.slice(0, 80) + "..."
             : game?.summary}

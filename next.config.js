@@ -6,7 +6,6 @@ const nextConfig = {
         protocol: 'http',
         hostname:'images.igdb.com',
         port:'',
-        pathname: '/igdb/**',
       }
     ]
   }

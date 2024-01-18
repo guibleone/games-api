@@ -1,12 +1,21 @@
+"use client";
 import Image from "next/image";
-import React from "react";
+import React, { useState } from "react";
+import { Button } from "./ui/button";
 
 export default function SingleCard({ game }: { game: any }) {
+  const [readMore, setReadMore] = useState(false);
+  const onClick = () => {
+    setReadMore(!readMore);
+  };
+
   return (
     <section className="mx-auto max-w-screen-lg px-8 py-5 md:py-0">
       <div className="flex flex-col gap-10 ">
         <div>
-          <h1 className="text-2xl sm:text-4xl font-bold">{game.name}</h1>
+          <h1 className="text-2xl sm:text-4xl font-bold text-zinc-100">
+            {game.name}
+          </h1>
           <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 items-center">
             {game?.genres.map((genre: any) => (
               <p
@@ -19,7 +28,22 @@ export default function SingleCard({ game }: { game: any }) {
           </div>
         </div>
 
-        <p className="text-sm text-gray-500 md:text-lg">{game?.summary}</p>
+        <p className="text-md text-zinc-400 md:text-lg">
+          {game?.summary.length > 300 ? (
+            <div className="flex flex-col">
+              {readMore ? game?.summary : game?.summary.slice(0, 300) + "..."}
+              <Button
+              className="self-start mt-4"
+                variant={readMore ? "outline" : "secondary"}
+                onClick={onClick}
+              >
+                {readMore ? "Read Less" : "Read More"}
+              </Button>
+            </div>
+          ) : (
+            <></>
+          )}
+        </p>
 
         <div className="flex flex-wrap -mx-3 mt-4">
           {game?.screenshots.map((screenShot: any) => (
