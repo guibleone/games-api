@@ -3,6 +3,7 @@ import React, { Suspense } from "react";
 import Pagination from "./pagination";
 import Games from "./games";
 import Search from "./search-input";
+import GamesSkeleton from "./skeletons/games-skeleton";
 
 export default async function PopularGames({
   query,
@@ -19,7 +20,7 @@ export default async function PopularGames({
         <Search placeholder="Search games..." />
       </div>
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-10">
-        <Suspense fallback={<div>Carregando...</div>}>
+        <Suspense fallback={<p>Loading...</p>}>
           <Games query={query} currentPage={currentPage} />
         </Suspense>
       </div>

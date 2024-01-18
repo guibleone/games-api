@@ -33,7 +33,7 @@ export default function SingleCard({ game }: { game: any }) {
             <div className="flex flex-col">
               {readMore ? game?.summary : game?.summary.slice(0, 300) + "..."}
               <Button
-              className="self-start mt-4"
+                className="self-start mt-4"
                 variant={readMore ? "outline" : "secondary"}
                 onClick={onClick}
               >
