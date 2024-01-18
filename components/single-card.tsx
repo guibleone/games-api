@@ -52,7 +52,7 @@ export default function SingleCard({ game }: { game: any }) {
               className="w-full sm:w-1/2 lg:w-1/3 px-3 mb-4"
             >
               <Image
-                src={`http:/images.igdb.com/igdb/image/upload/t_1080p/${screenShot.image_id}.jpg`}
+                src={`http://images.igdb.com/igdb/image/upload/t_1080p/${screenShot.image_id}.jpg`}
                 alt={game.name}
                 width={600}
                 height={150}
