@@ -6,7 +6,7 @@ Projeto Next.js 14 com API IGDB
 
 Este projeto é uma aplicação web desenvolvida utilizando Next.js 14 para a construção do frontend e a API IGDB para realizar pesquisas de jogos. A aplicação permite aos usuários buscar informações detalhadas sobre jogos, incluindo títulos, descrições, classificações e muito mais.
 
-![Uploading image.png…]()
+![image](https://github.com/guibleone/games-api/assets/81646062/b7320451-82af-4fa4-b995-dc494ccbd62e)
 
 ## Pré-requisitos
 
