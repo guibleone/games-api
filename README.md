@@ -35,7 +35,9 @@ yarn
 Crie um arquivo `.env.local` na raiz do projeto e adicione suas chaves de API IGDB:
 
 ```env
-NEXT_PUBLIC_IGDB_API_KEY=SuaChaveDeAPIIGDB
+CLIENT_ID=
+CLIENT_SECRET=
+AUTHORIZATION=
 ```
 
 ## Uso
