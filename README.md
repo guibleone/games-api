@@ -64,7 +64,3 @@ Sinta-se à vontade para contribuir com melhorias, correções de bugs ou novos 
 ## Licença
 
 Este projeto é licenciado sob a [Licença MIT](LICENSE).
-
-```
-
-Lembre-se de personalizar o README de acordo com as características específicas do seu projeto e fornecer informações úteis para outros desenvolvedores. Certifique-se de incluir links para a documentação relevante, seja do Next.js ou da API IGDB, e adicione informações sobre como os usuários podem contribuir para o projeto.
