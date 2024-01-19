@@ -1,36 +1,68 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Games XD
 
-## Getting Started
+Projeto Next.js 14 com API IGDB
 
-First, run the development server:
+## Descrição
+
+Este projeto é uma aplicação web desenvolvida utilizando Next.js 14 para a construção do frontend e a API IGDB para realizar pesquisas de jogos. A aplicação permite aos usuários buscar informações detalhadas sobre jogos, incluindo títulos, descrições, classificações e muito mais.
+
+## Pré-requisitos
+
+Antes de começar, certifique-se de ter instalado:
+
+- [Node.js](https://nodejs.org/) (versão 14 ou superior)
+- [npm](https://www.npmjs.com/) ou [Yarn](https://yarnpkg.com/)
+
+## Instalação
+
+1. Clone o repositório:
+
+```bash
+git clone https://github.com/seu-usuario/seu-projeto.git
+cd seu-projeto
+```
+
+2. Instale as dependências:
+
+```bash
+npm install
+# ou
+yarn
+```
+
+## Configuração
+
+Crie um arquivo `.env.local` na raiz do projeto e adicione suas chaves de API IGDB:
+
+```env
+NEXT_PUBLIC_IGDB_API_KEY=SuaChaveDeAPIIGDB
+```
+
+## Uso
+
+Inicie a aplicação localmente:
 
 ```bash
 npm run dev
-# or
+# ou
 yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Acesse [http://localhost:3000](http://localhost:3000) no seu navegador.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Recursos
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+- **Next.js 14:** [Documentação Next.js](https://nextjs.org/docs/getting-started/introduction)
+- **API IGDB:** [Documentação IGDB](https://www.igdb.com/api/documentation)
 
-## Learn More
+## Contribuição
 
-To learn more about Next.js, take a look at the following resources:
+Sinta-se à vontade para contribuir com melhorias, correções de bugs ou novos recursos. Crie uma issue ou envie um pull request!
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Licença
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+Este projeto é licenciado sob a [Licença MIT](LICENSE).
 
-## Deploy on Vercel
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Lembre-se de personalizar o README de acordo com as características específicas do seu projeto e fornecer informações úteis para outros desenvolvedores. Certifique-se de incluir links para a documentação relevante, seja do Next.js ou da API IGDB, e adicione informações sobre como os usuários podem contribuir para o projeto.
